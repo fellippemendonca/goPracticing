@@ -5,6 +5,8 @@ import "fmt"
 
 func Functions() {
 
+	fmt.Println("\n\n ## The following content is exploring Go Functions ## \n");
+
 	// defer executes de function only after all functions inside this scope are executed;
 	defer fmt.Println("squareFunc(2):", squareFunc(2));
 	num1, num2 := next2ValuesFunc(1);

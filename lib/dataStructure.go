@@ -5,27 +5,8 @@ import "fmt"
 
 func DataStructure() {
 
-	var byteVar byte = 1;
-	fmt.Println("byte:", byteVar);
-
-	var booleanVar bool = true;
-	fmt.Println("bool:", booleanVar);
-
-	var stringVar string = "Hello World";
-	fmt.Println("string:", stringVar);
-
-	var uint8Var uint8 = 0;
-	fmt.Println("uint8-64:", uint8Var);
-
-	var int8Var int8 = -128;
-	fmt.Println("int8-64:", int8Var);
-
-	var float32Var float32 = -2147483648.2147483648;
-	fmt.Println("float32-64:", float32Var);
+	fmt.Println("\n\n ## The following content is exploring Go Data Structures ## \n");
 	
-	var complex64Var complex64 = -9223372036854775808.1;
-	fmt.Println("complex64-128:", complex64Var);
-
 
 	// Arrays
 	var arrayVar[3] float64;
@@ -62,21 +43,51 @@ func DataStructure() {
 	sampleMap["address2"] = 101;
 	fmt.Println(sampleMap);
 
+	// Structs
+	triangle := Triangle{ height: 10, width: 10 };
+	fmt.Printf("Struct triangle type:%T, value:%v: \n", triangle, triangle);
+	fmt.Println("Struct triangle area:", triangle.area());
 
-	// Pointers
-	x := 0;
-	fmt.Println("Value of x is:", x);
-	fmt.Println("Address of x is:", &x);
-	
-	y := &x;
-	fmt.Printf("y := &x, so y = %T\n", y);
+	rectangle := Rectangle{ height: 10, width: 10 };
+	circle := Circle{ radius: 10 };
 
-	anonymous := func(num *int) {
-		*num++;
-	};
-	
-	anonymous(y);
-	
-	fmt.Println("new value of x:", x);
+	fmt.Println("Interface Rectangle Area:", getArea(rectangle));
+	fmt.Println("Interface Circle Area:", getArea(circle));
 
+}
+
+type Triangle struct {
+	height float64;
+	width float64;
+}
+
+func (triangle *Triangle) area() float64 {
+	return (triangle.width * triangle.height)/2;
+}
+
+
+type Shape interface {
+	area() float64;
+}
+
+type Rectangle struct {
+	height float64;
+	width float64;
+}
+
+type Circle struct {
+	radius float64;
+}
+
+func (rectangle Rectangle) area() float64 {
+	return rectangle.width * rectangle.height;
+}
+
+func (circle Circle) area() float64 {
+	const pi float64 = 3.1415;
+	return pi * (circle.radius * circle.radius);
+}
+
+func getArea(shape Shape) float64 {
+	return shape.area();
 }

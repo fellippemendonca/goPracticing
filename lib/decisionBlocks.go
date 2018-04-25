@@ -6,6 +6,8 @@ const inputInt = 5;
 
 func DecisionBlocks() {
 
+	fmt.Println("\n\n ## The following content is exploring Go Decision Blocks ## \n");
+
 	fmt.Println("if/else if/else");
 	
 	// ----------------------- IF -----------------------
