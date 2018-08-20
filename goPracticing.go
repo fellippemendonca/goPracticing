@@ -6,15 +6,15 @@ import (
 
 func main() {
 
-	lib.LoopIterations();
-	lib.DecisionBlocks();
-	lib.Variables();
-	lib.DataStructure();
-	lib.Functions();
-	lib.StringOperations();
-	lib.FileOperations();
-	lib.TipeConvertions();
-	lib.Routines();
+	//lib.LoopIterations();
+	//lib.DecisionBlocks();
+	//lib.Variables();
+	//lib.DataStructure();
+	//lib.Functions();
+	//lib.StringOperations();
+	//lib.FileOperations();
+	//lib.TipeConvertions();
+	//lib.Routines();
 	lib.HttpServer();
-	
+
 }

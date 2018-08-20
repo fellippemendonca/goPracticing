@@ -1,30 +1,66 @@
 package lib
 
-import "fmt"
+import (
+	"fmt";
+	"errors";
+)
 
-const inputInt = 5;
+const positive int = 1;
+const negative int = -1;
 
 func DecisionBlocks() {
 
 	fmt.Println("\n\n ## The following content is exploring Go Decision Blocks ## \n");
 
-	fmt.Println("if/else if/else");
+	fmt.Println(ifElser(negative));
+	fmt.Println(ifElser(positive));
+
+	switcher(positive);
+
+}
+
+
+func positiveInts(value int) (int, error) {
 	
-	// ----------------------- IF -----------------------
-	if inputInt > 5 {
-		fmt.Println(inputInt, "is bigger than", 5);
-	} else if inputInt == 5 {
-		fmt.Println(inputInt, "is equal to", 5);
-	} else {
-		fmt.Println(inputInt, "is smaller than", 5);
+	if value < 0 {
+		return value, errors.New("int: Negative number");
 	}
 	
+	return value, nil;
+}
+
+
+func ifElser(value int) (string, error) {
+
+	checkVal, err := positiveInts(value);
+
+	if err != nil {
+	  return "negative value!", errors.New("negative value!");
+	}
+ 	
+	if checkVal > 1 {
+		return "is bigger than 1", nil;
+	} else if checkVal == 1 {
+		return "is equal to 1", nil;
+	} /*else {
+		return "is smaller than 1";
+	}*/
+
+	// This will work as last condition and don't need the final else. 
+	return "is smaller than 1", nil;
+
+}
+
+
+func switcher(value int) string {
 	fmt.Println("switch");
-	// ----------------------- SWITCH -----------------------
-	switch inputInt {
+
+	switch value {
 		case 4 : fmt.Println("integer is four");
 		case 5 : fmt.Println("integer is five");
 		default: fmt.Println("integer is something else");
 	}
+
+	return "done!";
 
 }

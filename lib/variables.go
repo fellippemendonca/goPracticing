@@ -36,18 +36,20 @@ func Variables() {
 	anyvar := "hello there...";
 	fmt.Println("Dynamic var type casting:", anyvar);
 
+
 	x := 0;
 	fmt.Println("Value of x is:", x);
 	fmt.Println("Address of x is:", &x);
 	
-	y := &x;
-	fmt.Printf("y := &x, so y = %T\n", y);
-
-	anonymous := func(num *int) {
+	anonymous := func(num *int) *int {
 		*num++;
+		return num;
 	};
-	anonymous(y);
-	fmt.Println("new value of x:", x);
-	
+
+	z := anonymous(&x);
+	fmt.Printf("new value of x: %v, and value of z: %v\n", x, *z);
+
+
+	fmt.Println(x<<8 + *z<<16);
 
 }
