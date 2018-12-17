@@ -6,7 +6,7 @@ import (
 )
 
 
-func TipeConvertions() {
+func TypeConvertions() {
 
 	fmt.Println("\n\n ## The following content is exploring Go Type Convertions ## \n");
 	

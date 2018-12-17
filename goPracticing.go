@@ -13,8 +13,8 @@ func main() {
 	//lib.Functions();
 	//lib.StringOperations();
 	//lib.FileOperations();
-	//lib.TipeConvertions();
+	lib.TypeConvertions();
 	//lib.Routines();
-	lib.HttpServer();
+	//lib.HttpServer();
 
 }

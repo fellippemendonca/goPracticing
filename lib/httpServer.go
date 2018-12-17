@@ -44,7 +44,7 @@ func allArticles(responseWriter http.ResponseWriter, request *http.Request) {
 
 	json.NewEncoder(responseWriter).Encode(articles);
 	
-	fmt.Println(responseWriter, "allArticles Endpoint Hit");
+	fmt.Println("allArticles Endpoint Hit");
 }
 
 
