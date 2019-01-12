@@ -2,54 +2,51 @@ package lib
 
 import "fmt"
 
-
 func Variables() {
 
-	fmt.Println("\n\n ## The following content is exploring Go Variables ## \n");
+	fmt.Println("\n\n ## The following content is exploring Go Variables ## \n")
 
-	const pi float64 = 3.1415926535;
-	
-	fmt.Printf("%.3f \n", pi);
-	fmt.Printf("%T \n", pi);
+	const pi float64 = 3.1415926535
 
-	var byteVar byte = 1;
-	fmt.Println("byte:", byteVar);
+	fmt.Printf("%.3f \n", pi)
+	fmt.Printf("%T \n", pi)
 
-	var booleanVar bool = true;
-	fmt.Println("bool:", booleanVar);
+	var byteVar byte = 1
+	fmt.Println("byte:", byteVar)
 
-	var stringVar string = "Hello World";
-	fmt.Println("string:", stringVar);
+	var booleanVar bool = true
+	fmt.Println("bool:", booleanVar)
 
-	var uint8Var uint8 = 0;
-	fmt.Println("uint8-64:", uint8Var);
+	var stringVar string = "Hello World"
+	fmt.Println("string:", stringVar)
 
-	var int8Var int8 = -128;
-	fmt.Println("int8-64:", int8Var);
+	var uint8Var uint8 = 0
+	fmt.Println("uint8-64:", uint8Var)
 
-	var float32Var float32 = -2147483648.2147483648;
-	fmt.Println("float32-64:", float32Var);
-	
-	var complex64Var complex64 = -9223372036854775808.1;
-	fmt.Println("complex64-128:", complex64Var);
+	var int8Var int8 = -128
+	fmt.Println("int8-64:", int8Var)
 
-	anyvar := "hello there...";
-	fmt.Println("Dynamic var type casting:", anyvar);
+	var float32Var float32 = -2147483648.2147483648
+	fmt.Println("float32-64:", float32Var)
 
+	var complex64Var complex64 = -9223372036854775808.1
+	fmt.Println("complex64-128:", complex64Var)
 
-	x := 0;
-	fmt.Println("Value of x is:", x);
-	fmt.Println("Address of x is:", &x);
-	
+	anyvar := "hello there..."
+	fmt.Println("Dynamic var type casting:", anyvar)
+
+	x := 0
+	fmt.Println("Value of x is:", x)
+	fmt.Println("Address of x is:", &x)
+
 	anonymous := func(num *int) *int {
-		*num++;
-		return num;
-	};
+		*num++
+		return num
+	}
 
-	z := anonymous(&x);
-	fmt.Printf("new value of x: %v, and value of z: %v\n", x, *z);
+	z := anonymous(&x)
+	fmt.Printf("new value of x: %v, and value of z: %v\n", x, *z)
 
-
-	fmt.Println(x<<8 + *z<<16);
+	fmt.Println(x<<8 + *z<<16)
 
 }
