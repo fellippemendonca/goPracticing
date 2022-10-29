@@ -6,7 +6,7 @@ const times = 3
 
 func LoopIterations() {
 
-	fmt.Println("\n\n ## The following content is exploring Go Loop Iterations ## \n")
+	fmt.Println("## The following content is exploring Go Loop Iterations ##")
 
 	fmt.Println("For iteration as while =", whileFor(times))
 

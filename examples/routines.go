@@ -14,18 +14,23 @@ func Routines() {
 	go restaurant.Delivey()
 
 	restaurant.Ordering("Steak")
-	time.Sleep(time.Millisecond * 5000)
+	// restaurant.Ordering("Pizza")
+	// restaurant.Ordering("Burger")
+	meal := <-restaurant.CloseCh
+	fmt.Println("Delivered the", meal)
 }
 
 type Restaurant struct {
 	PreparingCh chan string
 	ShippingCh  chan string
+	CloseCh     chan string
 }
 
 func NewRestaurant() Restaurant {
 	return Restaurant{
 		PreparingCh: make(chan string),
 		ShippingCh:  make(chan string),
+		CloseCh:     make(chan string),
 	}
 }
 
@@ -45,4 +50,5 @@ func (r *Restaurant) Delivey() {
 	meal := <-r.ShippingCh
 	fmt.Println("Shipping the", meal)
 	time.Sleep(time.Millisecond * 2000)
+	r.CloseCh <- meal
 }
